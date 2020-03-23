@@ -80,6 +80,7 @@ class Cluster:
         else:
             logger.info('Creating a local client with default parallel count')
             self.client = Client()
+            print(self.client)
             self.client.run(init_logging, log_prefix, debug, log_level_name)
             self.local = True
 

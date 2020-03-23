@@ -84,6 +84,7 @@ def main():
         logger.info('Loading configuration file: %s' % cmdline_args.conf_file)
 
         config = load_config(cmdline_args.conf_file)
+        print(config.config)
         if 'verbosity' in config.config:
             printing.verbosity = config.config['verbosity']
 
