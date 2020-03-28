@@ -555,6 +555,8 @@ class Algorithm(object):
                     os.mkdir(init_dir)
                 os.chdir(init_dir)
 
+                # interacting with model
+
                 gnm_name = '%s_gen_net' % m.name
                 default_pset = PSet([var.set_value(var.default_value) for var in self.variables])
                 m.save(gnm_name, gen_only=True, pset=default_pset)
