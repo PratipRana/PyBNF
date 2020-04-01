@@ -551,7 +551,9 @@ class Configuration(object):
         mapping = dict()
         for model in self.models.values():
             suffs = set(model.get_suffixes())
+            print(suffs)
             efs_per_m = {self._file_prefix(ef) for ef in self.config[model.file_path] if re.search("\.exp$", ef)}
+            print(efs_per_m)
             if not efs_per_m <= suffs:
                 for ef in efs_per_m:
                     if ef not in suffs:
