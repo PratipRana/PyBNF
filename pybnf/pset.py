@@ -482,6 +482,17 @@ class NetModel(BNGLModel):
             wf.write('readFile({file=>"%s"})\n' % (file_prefix + '.net'))
             wf.write('begin actions\n\n%s\n\nend actions\n' % '\n'.join(self.actions))
 
+class ExternalModel(Model):
+    def __init__(self, pset=None, actions=(), save_files=False):
+        self.param_set = pset
+        self.save_files = save_files
+        self.actions = list(actions)
+
+    def execute(self, folder, filename, timeout):
+        result_dict = dict()
+        return result_dict
+
+
 
 class SbmlModelNoTimeout(Model):
 

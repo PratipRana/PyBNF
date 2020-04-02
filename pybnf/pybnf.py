@@ -84,7 +84,6 @@ def main():
         logger.info('Loading configuration file: %s' % cmdline_args.conf_file)
 
         config = load_config(cmdline_args.conf_file)
-        print(config.config)
         if 'verbosity' in config.config:
             printing.verbosity = config.config['verbosity']
 
@@ -225,6 +224,7 @@ def main():
             cluster = Cluster(config, log_prefix, debug, cmdline_args.log_level)
             # Run the algorithm!
             logger.debug('Algorithm initialization')
+            # running algorithm
             alg.run(cluster.client, resume=pending, debug=debug)
         else:
             # Run model checking
